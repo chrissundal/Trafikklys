@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #trafikkLys {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 700px;
+            background-color: black;
+            gap: 1rem;
+        }
+
+        .lys {
+            margin-left: 50px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+
+        .buttons {
+            display: flex;
+            width: 200px;
+
+        }
+
+        #app {
+            width: 300px;
+            height: 700px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Trafikklys</h1>
+    <div class="buttons">
+        <button onclick="show('gray', 'gray', 'green')">Grønn</button>
+        <button onclick="show('gray','yellow', 'gray')">Gul</button>
+        <button onclick="show('red', 'gray', 'gray')">Rød</button>
+        <button onclick="show('red','yellow', 'gray')">Gul Rød</button>
+        <button onclick="autoLightRed()">Auto</button>
+        <button onclick="uteAvDrift()">Ute av drift</button>
+        <button onclick="turnOff()">Slå av</button>
+    </div>
+    <div id="app"></div>
+    <script>
+
+        function show(color1, color2, color3) {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <div id="trafikkLys">
+                <div class="lys" style="background-color: ${color1};"></div>
+                <div class="lys" style="background-color: ${color2};"></div>
+                <div class="lys" style="background-color: ${color3};"></div>            
+            </div>
+                `;
+        }
+        function autoLightGreen() {
+            greenColor = show('gray', 'gray', 'green');
+            setTimeout(autoLightYellow, 2000);
+        }
+        function autoLightYellow() {
+            yellowColor = show('gray', 'yellow', 'gray');
+            setTimeout(autoLightRed, 2000);
+
+        }
+        function autoLightRed() {
+            redColor = show('red', 'gray', 'gray');
+            setTimeout(autoLightRedYellow, 1000);
+
+        }
+        function autoLightRedYellow() {
+            redYellow = show('red', 'yellow', 'gray')
+            setTimeout(autoLightGreen, 1000)
+        }
+        function uteAvDrift() {
+            gray = show('gray', 'gray', 'gray')
+            setTimeout(uteAvDriftLys, 500);
+
+        }
+        function uteAvDriftLys() {
+            yellowColor = show('gray', 'yellow', 'gray');
+            setTimeout(uteAvDrift, 500);
+        }
+        function turnOff() {
+            location.reload();
+
+        }
+    </script>
+</body>
+</html>
