@@ -61,30 +61,30 @@
                 `;
         }
         function autoLightGreen() {
-            greenColor = show('gray', 'gray', 'green');
+            show('gray', 'gray', 'green');
             setTimeout(autoLightYellow, 2000);
         }
         function autoLightYellow() {
-            yellowColor = show('gray', 'yellow', 'gray');
+            show('gray', 'yellow', 'gray');
             setTimeout(autoLightRed, 2000);
 
         }
         function autoLightRed() {
-            redColor = show('red', 'gray', 'gray');
+            show('red', 'gray', 'gray');
             setTimeout(autoLightRedYellow, 1000);
 
         }
         function autoLightRedYellow() {
-            redYellow = show('red', 'yellow', 'gray')
+            show('red', 'yellow', 'gray')
             setTimeout(autoLightGreen, 1000)
         }
         function uteAvDrift() {
-            gray = show('gray', 'gray', 'gray')
+            show('gray', 'gray', 'gray')
             setTimeout(uteAvDriftLys, 500);
 
         }
         function uteAvDriftLys() {
-            yellowColor = show('gray', 'yellow', 'gray');
+            show('gray', 'yellow', 'gray');
             setTimeout(uteAvDrift, 500);
         }
         function turnOff() {
