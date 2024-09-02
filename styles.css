@@ -1,0 +1,27 @@
+#trafikkLys {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 700px;
+    background-color: black;
+    gap: 1rem;
+}
+
+.lys {
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.buttons {
+    display: flex;
+    width: 200px;
+}
+
+#app {
+    width: 300px;
+    height: 700px;
+    background-color: black;
+}
